@@ -1,13 +1,5 @@
-import Header from './Header'
-import Navigation from './Navigation'
-
 function Home() {
-  return (
-    <>
-      <Header />
-      <Navigation />
-    </>
-  )
+  return <></>
 }
 
 export default Home

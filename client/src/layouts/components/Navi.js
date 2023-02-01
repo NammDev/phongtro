@@ -1,5 +1,5 @@
-function Navigation() {
+function Navi() {
   return <div className='w-screen bg-secondary h-10'></div>
 }
 
-export default Navigation
+export default Navi

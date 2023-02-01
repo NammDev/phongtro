@@ -1,13 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Home, Login } from './containers/Public'
+import { publicRoutes } from './routes'
 
 function App() {
   return (
     <Router>
       <div className='h-screen w-screen bg-primary'>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
+          {publicRoutes.map((route, i) => {
+            const Layout = route.layout
+            const Page = route.component
+            const path = route.path
+            return (
+              <Route
+                key={i}
+                path={path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            )
+          })}
         </Routes>
       </div>
     </Router>
