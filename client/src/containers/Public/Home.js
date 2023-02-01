@@ -1,10 +1,11 @@
 import Header from './Header'
+import Navigation from './Navigation'
 
 function Home() {
   return (
     <>
       <Header />
-      <div className='w-full bg-black h-3'></div>
+      <Navigation />
     </>
   )
 }

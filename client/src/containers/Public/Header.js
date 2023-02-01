@@ -1,6 +1,6 @@
 import Button from '../../components/Button'
 import { IoMdAddCircleOutline } from 'react-icons/io'
-import { BiHeart, BiLogIn, BiLogOut } from 'react-icons/bi'
+import { BiHeart, BiLogIn, BiUserPlus } from 'react-icons/bi'
 
 function Header() {
   return (
@@ -13,7 +13,7 @@ function Header() {
         <Button className='mr-[5px]' to={'/'} left={<BiLogIn />}>
           Đăng nhập
         </Button>
-        <Button className='mr-[5px]' to={'/'} left={<BiLogOut />}>
+        <Button className='mr-[5px]' to={'/'} left={<BiUserPlus />}>
           Đăng ký
         </Button>
         <Button
