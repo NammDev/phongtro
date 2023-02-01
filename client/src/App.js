@@ -4,7 +4,7 @@ import { Home, Login } from './containers/Public'
 function App() {
   return (
     <Router>
-      <div className=''>
+      <div className='h-screen w-screen bg-primary'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
