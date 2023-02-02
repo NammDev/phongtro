@@ -6,7 +6,7 @@ import Navi from './containers/components/Navi'
 function App() {
   return (
     <Router>
-      <div className='h-screen w-screen bg-primary'>
+      <div className='h-screen w-screen bg-primary text-[14px]'>
         <Header />
         <Navi />
         <main className='w-1100 mx-auto my-2.5'>
