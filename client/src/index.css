@@ -23,3 +23,9 @@ button,
 input {
   overflow: visible;
 }
+
+a {
+  color: #1266dd;
+  text-decoration: none;
+  background-color: transparent;
+}

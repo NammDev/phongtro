@@ -1,4 +1,5 @@
 import { Button, Input } from '../../components'
+import { Link } from 'react-router-dom'
 
 function Login() {
   return (
@@ -7,10 +8,12 @@ function Login() {
       <div>
         <Input type='text' label='số điện thoại' />
         <Input type='password' label='Mật khẩu' />
-        <Button to='/'>Đăng nhập</Button>
-        <div>
-          <div>Bạn quên mật khẩu?</div>
-          <div>Tạo tại khoản mới</div>
+        <Button to='/' className='bg-[#3961fb] text-white w-full h-[45px] mb-[30px] font-bold'>
+          Đăng nhập
+        </Button>
+        <div className='mb-5 flex justify-between'>
+          <Link to='/'>Bạn quên mật khẩu?</Link>
+          <Link to='/'>Tạo tại khoản mới</Link>
         </div>
       </div>
     </div>
