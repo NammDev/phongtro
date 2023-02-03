@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize')
 
-const sequelize = new Sequelize('postgres://postgres:namkhanh@localhost:5432/perntodo') // Example for postgres
+const sequelize = new Sequelize('postgres://postgres:namkhanh@localhost:5432/phongtro') // Example for postgres
 
 const connectDb = async () => {
   try {
