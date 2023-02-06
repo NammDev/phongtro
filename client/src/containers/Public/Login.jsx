@@ -8,12 +8,15 @@ function Login() {
       <div>
         <Input type='text' label='số điện thoại' />
         <Input type='password' label='Mật khẩu' />
-        <Button to='/' className='bg-[#3961fb] text-white w-full h-[45px] mb-[30px] font-bold'>
+        <Button
+          to='/'
+          className='bg-[#3961fb] text-white w-full h-[45px] mb-[30px] font-bold hover:text-white'
+        >
           Đăng nhập
         </Button>
         <div className='mb-5 flex justify-between'>
           <Link to='/'>Bạn quên mật khẩu?</Link>
-          <Link to='/'>Tạo tại khoản mới</Link>
+          <Link to='/register'>Tạo tại khoản mới</Link>
         </div>
       </div>
     </div>

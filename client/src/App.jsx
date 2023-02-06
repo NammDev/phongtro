@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Home, Login } from './containers/Public'
+import { Home, Login, Register } from './containers/Public'
 import Header from './containers/components/Header'
 import Navi from './containers/components/Navi'
 
@@ -13,6 +13,7 @@ function App() {
           <Routes>
             <Route path='' element={<Home />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
           </Routes>
         </main>
       </div>
