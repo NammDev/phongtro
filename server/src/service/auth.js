@@ -21,7 +21,7 @@ export const registereServices = ({ phone, password, name }) =>
       })
       const token =
         created &&
-        jwt.sign({ id: row.id, phone: row.id }, process.env.SECRET_KEY, { expiresIn: '2d' })
+        jwt.sign({ id: row.id, phone: row.phone }, process.env.SECRET_KEY, { expiresIn: '2d' })
       resolve({
         err: token ? 0 : 2,
         msg: token ? 'Register is successfuly' : 'Phone number has been already in use!',
