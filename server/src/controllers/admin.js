@@ -3,11 +3,12 @@ import db from '../models'
 export const dashboard = async (req, res) => {
   try {
     // check token
-    // const response = await db.User.findOne({
-    //   where: { phone },
-    //   raw: true,
-    // })
-    res.send(req.user)
+    const response = await db.User.findOne({
+      attributes: ['name'],
+      where: { phone: req.user.phone },
+      raw: true,
+    })
+    res.send(response)
   } catch (error) {
     return res.status(500).json({
       err: -1,
