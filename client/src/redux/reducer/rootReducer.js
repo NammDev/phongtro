@@ -5,13 +5,9 @@ import storage from 'redux-persist/lib/storage'
 import autoMergeLevel2 from 'redux-persist/es/stateReconciler/autoMergeLevel2'
 import { persistReducer } from 'redux-persist'
 
-const commonConfig = {
+const authConfig = {
   storage,
   stateReconciler: autoMergeLevel2,
-}
-
-const authConfig = {
-  ...commonConfig,
   key: 'auth',
   whitelist: ['isLoggedIn', 'token'],
 }
