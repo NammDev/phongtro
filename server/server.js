@@ -8,7 +8,8 @@ const port = process.env.PORT || 8888
 const app = express()
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: [process.env.CLIENT_URL_DEFAULT, 'http://localhost:3001'],
+    default: process.env.CLIENT_URL_DEFAULT,
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
   })
 )

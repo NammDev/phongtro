@@ -1,8 +1,8 @@
 // Verify for login
 
 const initState = {
-  isLoggedIn: true,
-  token: 123,
+  isLoggedIn: false,
+  token: null,
 }
 
 const authReducer = (state = initState, action) => {

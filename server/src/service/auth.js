@@ -52,7 +52,7 @@ export const loginServices = ({ phone, password }) =>
           : response
           ? 'Wrong password'
           : 'Phone number not found!',
-        token: token || null,
+        accessToken: token || null,
       })
     } catch (error) {
       reject(error)
