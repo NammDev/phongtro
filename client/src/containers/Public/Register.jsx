@@ -1,9 +1,12 @@
 import { Button, Input } from '../../components'
 import { Link } from 'react-router-dom'
-import { apiRegister } from '../../services/authService'
+
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { register } from '../../redux/actions/auth'
 
 function Register() {
+  const dispatch = useDispatch()
   const [inputs, setInputs] = useState({
     name: '',
     phone: '',
@@ -16,7 +19,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await apiRegister({ name, password, phone })
+      dispatch(register(inputs))
     } catch (error) {}
   }
   return (

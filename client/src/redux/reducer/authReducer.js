@@ -1,12 +1,27 @@
-// Verify for login
-
+import actionTypes from '../actions/actionTypes'
 const initState = {
   isLoggedIn: false,
   token: null,
+  msg: '',
 }
 
 const authReducer = (state = initState, action) => {
-  return state
+  switch (action.type) {
+    case actionTypes.REGISTER_SUCCESS:
+      return {
+        ...state,
+        isLoggedIn: true,
+        ...action.data,
+      }
+    case actionTypes.REGISTER_FAIL:
+      return {
+        ...state,
+        isLoggedIn: false,
+        ...action.data,
+      }
+    default:
+      return state
+  }
 }
 
 export default authReducer
