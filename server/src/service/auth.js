@@ -22,7 +22,7 @@ export const registereServices = ({ phone, password, name }) =>
       resolve({
         err: token ? 0 : 2,
         msg: token ? 'Register is successfuly' : 'Phone number has been already in use!',
-        token: token || null,
+        accessToken: token || null,
       })
     } catch (error) {
       reject(error)

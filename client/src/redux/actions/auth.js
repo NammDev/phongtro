@@ -8,7 +8,7 @@ export const register = (payload) => async (dispatch) => {
       dispatch({
         type: actionTypes.REGISTER_SUCCESS,
         data: {
-          token: response.token,
+          token: response.accessToken,
           msg: response.msg,
         },
       })
@@ -33,7 +33,7 @@ export const login = (payload) => async (dispatch) => {
       dispatch({
         type: actionTypes.LOGIN_SUCCESS,
         data: {
-          token: response.token,
+          token: response.accessToken,
           msg: response.msg,
         },
       })
