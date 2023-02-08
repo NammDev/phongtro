@@ -51,3 +51,9 @@ export const login = (payload) => async (dispatch) => {
     console.log(error)
   }
 }
+
+export const logout = () => async (dispatch) => {
+  dispatch({
+    type: actionTypes.LOGOUT,
+  })
+}

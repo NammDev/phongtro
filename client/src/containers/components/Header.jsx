@@ -3,16 +3,14 @@ import { IoMdAddCircleOutline } from 'react-icons/io'
 import { BiHeart, BiLogIn, BiUserPlus } from 'react-icons/bi'
 import { GrAppsRounded } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
 import Username from './Username'
+import { logout } from '../../redux/actions/auth'
 
 function Header() {
-  const test = useSelector((state) => state.auth.isLoggedIn)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  useEffect(() => {
-    setIsLoggedIn(test)
-  }, [])
+  const dispatch = useDispatch()
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
 
   return (
     <div className='w-1100 my-0 mx-auto flex justify-between items-start'>
@@ -45,7 +43,7 @@ function Header() {
           <Button
             color='text-black'
             className='mr-[5px] hover:text-black'
-            to='/register'
+            onClick={() => dispatch(logout())}
             left={<GrAppsRounded />}
           >
             Quản lý tài khoản
