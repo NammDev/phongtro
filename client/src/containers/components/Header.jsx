@@ -1,16 +1,25 @@
-import Button from '../../components/Button'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import { IoMdAddCircleOutline } from 'react-icons/io'
 import { BiHeart, BiLogIn, BiUserPlus } from 'react-icons/bi'
 import { GrAppsRounded } from 'react-icons/gr'
-import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { useState, useEffect } from 'react'
 import Username from './Username'
+import Button from '../../components/Button'
 import { logout } from '../../redux/actions/auth'
 
 function Header() {
   const dispatch = useDispatch()
+  const nav = useNavigate()
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
+
+  const handleLogOut = () => {
+    try {
+      dispatch(logout())
+      nav('/login')
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className='w-1100 my-0 mx-auto flex justify-between items-start'>
@@ -43,7 +52,7 @@ function Header() {
           <Button
             color='text-black'
             className='mr-[5px] hover:text-black'
-            onClick={() => dispatch(logout())}
+            onClick={handleLogOut}
             left={<GrAppsRounded />}
           >
             Quản lý tài khoản

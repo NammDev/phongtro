@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { login } from '../../redux/actions/auth'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [inputs, setInputs] = useState({
     phone: '',
@@ -18,6 +20,7 @@ function Login() {
     e.preventDefault()
     try {
       dispatch(login(inputs))
+      navigate('/home')
     } catch (error) {}
   }
 
