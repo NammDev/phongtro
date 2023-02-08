@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Home, Login, Register } from './containers/Public'
 import Header from './containers/components/Header'
 import Navi from './containers/components/Navi'
+import System from './containers/System/System'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path='' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/admin' element={<System />} />
           </Routes>
         </main>
       </div>
