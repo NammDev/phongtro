@@ -1,12 +1,16 @@
 import { Button, Input } from '../../components'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { login } from '../../redux/actions/auth'
 import { useNavigate } from 'react-router-dom'
+import { apiLogin } from '../../services/authService'
+import actionTypes from '../../redux/actions/actionTypes'
 
 function Login() {
   const dispatch = useDispatch()
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
+
   const nav = useNavigate()
 
   const [inputs, setInputs] = useState({
@@ -16,11 +20,11 @@ function Login() {
   const { phone, password } = inputs
   const onChange = (e) => setInputs({ ...inputs, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      dispatch(login(inputs))
-      nav('/')
+      const isSuccess = await dispatch(login(inputs))
+      isSuccess && nav('/')
     } catch (error) {}
   }
 

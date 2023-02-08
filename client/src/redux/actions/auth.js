@@ -12,6 +12,7 @@ export const register = (payload) => async (dispatch) => {
           msg: response.msg,
         },
       })
+      return true
     } else {
       dispatch({
         type: actionTypes.REGISTER_FAIL,
@@ -20,6 +21,7 @@ export const register = (payload) => async (dispatch) => {
           msg: response.msg,
         },
       })
+      return false
     }
   } catch (error) {
     dispatch({ type: actionTypes.REGISTER_FAIL, data: null })
@@ -37,6 +39,7 @@ export const login = (payload) => async (dispatch) => {
           msg: response.msg,
         },
       })
+      return true
     } else {
       dispatch({
         type: actionTypes.LOGIN_FAIL,
@@ -45,6 +48,7 @@ export const login = (payload) => async (dispatch) => {
           msg: response.msg,
         },
       })
+      return false
     }
   } catch (error) {
     dispatch({ type: actionTypes.LOGIN_FAIL, data: null })
