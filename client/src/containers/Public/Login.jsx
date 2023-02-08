@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Login() {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const nav = useNavigate()
 
   const [inputs, setInputs] = useState({
     phone: '',
@@ -20,7 +20,7 @@ function Login() {
     e.preventDefault()
     try {
       dispatch(login(inputs))
-      navigate('/home')
+      nav('/')
     } catch (error) {}
   }
 
